@@ -1,0 +1,4 @@
+{
+    "extends": "@parcel/config-default",
+    "namers": ["@gatsbyjs/parcel-namer-relative-to-cwd", "..."]
+}

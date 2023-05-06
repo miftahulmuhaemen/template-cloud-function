@@ -1,0 +1,9 @@
+{
+    "comments": false,
+    "parserOpts": {
+      "sourceType": "module",
+      "plugins": ["jsx"],
+      "attachComment": false
+    }
+}
+  
