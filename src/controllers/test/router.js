@@ -5,7 +5,7 @@ const {referer} = require('../../middleware/environment');
 const router = express.Router();
 router.use(referer);
 router.post(
-    '/',
+    '/test',
     body('userid').notEmpty().trim().escape(),
     async (req, res, next) => {
       try {
@@ -13,6 +13,7 @@ router.post(
         if (!errors.isEmpty()) {
           return next(new Error('Error'));
         }
+        res.end();
       } catch (err) {
         next(err);
       }
