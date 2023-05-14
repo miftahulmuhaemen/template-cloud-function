@@ -58,9 +58,10 @@ sed -i "s|require('../../middleware/error')|require('./error.js')|g" "$deploy_fo
 sed -i -e "s|require('\.\./\.\./\(.*\)/\(.*\)')|require('./\2.js')|g; s|require('\.\./\.\./middleware/\(.*\)')|require('./middleware/\1.js')|g; s|require('\.\./\.\./constant')|require('./constant.js')|g; s|require('\.\./\.\./qore/qore')|require('./qore.js')|g" "$deploy_folder/$1/router.js"
 
 # Copy contents of .env file to a new file, .env.yaml
-sed 's/\(.*\)=\(.*\)/\1: "\2"/' .env > .env.yaml
-# Remove the line with `env_variables`
-sed -i '/env_variables/d' .env.yaml
+sed -e 's/^\([^=]*\)=\(.*\)$/\1: "\2"/' \
+    -e 's/^  /    /' \
+    -e '/^$/d' \
+    .env > .env.yaml
 
 # Deploy the Cloud Function with the given name and package.json file
 gcloud functions deploy $function_name --gen2 --runtime=nodejs18  --region=asia-southeast2 --source=./deploy/$1/ --entry-point=main --trigger-http --allow-unauthenticated --memory=256MB --timeout=30s --verbosity=info --env-vars-file .env.yaml

@@ -1,6 +1,9 @@
 # V2
 
-This version not using Parcel/Babel to built first the project per controller but rather directly flattening directory and send all files as is, meaning it not consist of two file (index and package.json) but also all file needed, like middleware or qore.
+This version not using Parcel/Babel to built, but rather simply copying the files directly to cloud function.
+Because of that, it can utilize process.env still and maintain readable code.
+
+All done with only bash script. Also I add backup and restore script.
 
 # Project Tree
 
@@ -43,10 +46,19 @@ Faster project initiation and iteration.
 
 # How to deploy ?
 
-2. Modify `deploy.sh` and change `template` to your project name, also currently entry-point point to `main`, change as you please.
-3. Ensure that all required dependencies for THAT SPECIFIC FUNCTION are declared in `../controller/*/package.json`. (You can leave libraries you use for other functions but that are not required in here.)
-4. Open a Bash terminal and type `./deploy.sh FUNCTION_NAME` (ensure that the name matches the endpoint folder name and follows the standard naming convention by Google for Cloud Functions).
-5. Done.
+1. Modify `deploy.sh` and change `template` to your project name, also currently entry-point point to `main`, change as you please.
+2. Ensure that all required dependencies for THAT SPECIFIC FUNCTION are declared in `../controller/*/package.json`. (You can leave libraries you use for other functions but that are not required in here.)
+3. Open a Bash terminal and type `./deploy.sh FUNCTION_NAME` (ensure that the name matches the endpoint folder name and follows the standard naming convention by Google for Cloud Functions).
+4. Done.
+
+# How to backup ?
+
+1. Run `./backup.sh FUNCTION_NAME`
+
+# How to restore ?
+
+0. Run backup first if you haven't.
+1. Run `./restore.sh`, this reupload all `.zip` files on the same directory the script exist.
 
 # EXTRA - ESlint
 
