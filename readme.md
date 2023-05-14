@@ -1,13 +1,17 @@
+# V2
+
+This version not using Parcel/Babel to built first the project per controller but rather directly flattening directory and send all files as is, meaning it not consist of two file (index and package.json) but also all file needed, like middleware or qore.
+
 # Project Tree
 
 ```
 my-tree-project/
   ├── node_modules/
   ├── src/
-  │   ├── main.js
+  │   ├── index.js
   │   ├── controllers/
   │   │   └── test/ 
-  │   │   │   ├── main.js
+  │   │   │   ├── index.js
   │   │   │   ├── router.js
   │   │   │   └── package.json
   │   ├── middleware/
@@ -17,21 +21,14 @@ my-tree-project/
   │       └── qore.js
   └── .eslintrc.yml
   ├── package.json
-  └── .babelrc
-  └── .parcelrc
-  └── .gcloudignore
   └── .env
-  └── deploy-function.sh
+  └── deploy.sh
 ```
 
 
 # Benefit
 
-Faster project initiation and iteration (debugging).
-
-# Disadvantage
-
-Exposed API keys and other sensitive information in deployed index.js because Parcel is unable to leave them as they are.
+Faster project initiation and iteration.
 
 # Preps
 

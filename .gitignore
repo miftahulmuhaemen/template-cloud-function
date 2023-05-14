@@ -158,9 +158,6 @@ dist
 # and uncomment the following lines
 # .pnp.*
 
-.parcel-cache/
-index.js
-
 #!include:.gitignore
 
 # End of https://www.toptal.com/developers/gitignore/api/node,yarn
