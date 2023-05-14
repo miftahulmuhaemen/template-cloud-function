@@ -15,7 +15,7 @@ controllers=($(find ./src/controllers -type d -mindepth 1 -maxdepth 1 -exec base
 declare -A function_map=()
 
 for controller in "${controllers[@]}"; do
-  function_map[$controller]="megavin-$controller"
+  function_map[$controller]="template-$controller"
 done
 
 # Get the function name from the mapping based on the endpoint name
