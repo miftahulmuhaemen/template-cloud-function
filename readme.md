@@ -9,23 +9,26 @@ All done with only bash script. Also I add backup and restore script.
 
 ```
 my-tree-project/
-  ├── node_modules/
-  ├── src/
-  │   ├── index.js
-  │   ├── controllers/
-  │   │   └── test/ 
-  │   │   │   ├── index.js
-  │   │   │   ├── router.js
-  │   │   │   └── package.json
-  │   ├── middleware/
-  │   │   ├── environment.js
-  │   │   └── error.js
-  │   └── qore/
-  │       └── qore.js
-  └── .eslintrc.yml
-  ├── package.json
-  └── .env
-  └── deploy.sh
+├── .env
+├── .eslintrc.yml
+├── .gitignore
+├── backup.sh
+├── deploy.sh
+├── package.json
+├── restore.sh
+└── src
+  ├── constant.js
+  ├── controllers
+  │  └── test
+  │    ├── index.js
+  │    ├── package.json
+  │    └── router.js
+  ├── index.js
+  ├── middleware
+  │  ├── environment.js
+  │  └── error.js
+  └── qore
+    └── qore.js
 ```
 
 
