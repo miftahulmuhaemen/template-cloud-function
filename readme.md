@@ -3,7 +3,7 @@
 This version not using Parcel/Babel to built, but rather simply copying the files directly to cloud function.
 Because of that, it can utilize process.env still and maintain readable code.
 
-All done with only bash script. Also I add backup and restore script.
+<!-- All done with only bash script. Also I add backup and restore script. -->
 
 # Project Tree
 
@@ -53,7 +53,7 @@ Faster project initiation and iteration.
 2. Ensure that all required dependencies for THAT SPECIFIC FUNCTION are declared in `../controller/*/package.json`. (You can leave libraries you use for other functions but that are not required in here.)
 3. Open a Bash terminal and type `./deploy.sh FUNCTION_NAME` (ensure that the name matches the endpoint folder name and follows the standard naming convention by Google for Cloud Functions).
 4. Done.
-
+<!-- 
 # How to backup ?
 
 1. Run `./backup.sh FUNCTION_NAME`
@@ -61,7 +61,7 @@ Faster project initiation and iteration.
 # How to restore ?
 
 0. Run backup first if you haven't.
-1. Run `./restore.sh`, this reupload all `.zip` files on the same directory the script exist.
+1. Run `./restore.sh`, this reupload all `.zip` files on the same directory the script exist. -->
 
 # EXTRA - ESlint
 
